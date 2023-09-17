@@ -1,0 +1,23 @@
+.calcContainer{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    background-color: darkgray;
+}
+.calcDisplay{
+    background-color: dimgrey;
+    width: 280px;
+    height: 100px;
+    display: flex;
+    margin-bottom: auto;
+    margin-top: 10px;
+}
+.bttnContainer{
+    width: 290px;
+    height: 250px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}

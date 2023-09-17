@@ -5,9 +5,6 @@ let operator = '';
 
 
 
-
-
-
 // Ind. calculating func
 function add(num1,num2){
     return num1 + num2
@@ -25,6 +22,7 @@ function percent(num1,num2){
     return (num2 / 100) * num1
 }
 
+//Operate function that calls the given calculate function
 function operate() {
     num1 = Number(num1)
     num2 = Number(num2)

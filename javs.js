@@ -57,7 +57,7 @@ function checkOperator(op){
   } else {
     operate();
     operator = op;
-    lowerDisplay.textContent = " ";
+    lowerDisplay.textContent = " 0";
     upperDisplay.textContent = num2 + " " + operator;
   }
 }
@@ -73,6 +73,7 @@ function handleOperator(text){
 function calculate(){
   if(num1 != '' && num2 != ''){
     operate();
+    operator = '='
   }
 }
 equalsBttn.addEventListener('click', calculate);

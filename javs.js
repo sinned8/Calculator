@@ -1,8 +1,41 @@
+
+// Declaring buttons/ display
+const upperDisplay = document.querySelector('.digitsUpper');
+const lowerDisplay = document.querySelector('.digitsLower');
+const numberBttn = document.querySelectorAll('.number');
+const decimal = document.querySelector('#decimal');
+const clear = document.querySelector('#clear');
+const del = document.querySelector('#delete');
+const operatorBttn = document.querySelectorAll('.symbol-operator')
+const equalsBttn = document.querySelector('#equals');
+
+
+
+
+
 //Global vars
 let num1 = '';
 let num2 = '';
 let operator = '';
+//Display
+numberBttn.forEach((btn)=>{
+  btn.addEventListener('click', (e)=>{
+    checkNum(e.target.textContent);
+  })
+})
 
+//Checking input number length
+function checkNum(number){
+  console.log('checkNum', num1, operator, num2, '-->',number);
+  if (num1.length <= 21){
+    num1 += number;
+    lowerDisplay.textContent = num1;
+  }
+  //checking if = 
+  if (operator === '='){
+    num2 = '';
+  }
+}
 
 
 // Ind. calculating func

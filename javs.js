@@ -1,3 +1,4 @@
+//Dennis Dust -- Calculator 
 
 // Declaring buttons/ display
 const upperDisplay = document.querySelector('.digitsUpper');
@@ -8,9 +9,6 @@ const clear = document.querySelector('#clear');
 const del = document.querySelector('#delete');
 const operatorBttn = document.querySelectorAll('.symbol-operator')
 const equalsBttn = document.querySelector('#equals');
-
-
-
 
 
 //Global vars
@@ -70,6 +68,7 @@ function handleOperator(text){
   num1 = '';
 }
 
+
 //Equals bttn
 function calculate(){
   if(num1 != '' && num2 != ''){
@@ -77,6 +76,30 @@ function calculate(){
   }
 }
 equalsBttn.addEventListener('click', calculate);
+//Clear bttn
+function clearBttn(){
+  lowerDisplay.textContent = '';
+  upperDisplay.textContent = '';
+  num1 = '';
+  num2 = '';
+  operator = '';
+}
+clear.addEventListener('click',clearBttn);
+//Delete bttn
+function delbttn(){
+  num1 = num1.slice(0, lowerDisplay.textContent.length -1);
+  lowerDisplay.textContent = lowerDisplay.textContent.slice(0, lowerDisplay.textContent.length - 1);
+
+}
+del.addEventListener('click', delbttn);
+//Decimal bttn
+function decimalBttn(){
+  if(num1.includes('.') == false){
+    lowerDisplay.textContent = lowerDisplay.textContent + '.';
+    num1 = num1 + '.'
+  }
+}
+decimal.addEventListener('click',decimalBttn);
 
 
 // Ind. calculating func
@@ -84,13 +107,13 @@ function add(num1,num2){
     return num1 + num2
 }
 function subtract(num1,num2){
-    return num1 - num2
+    return num2 - num1
 }
 function multiply(num1,num2){
     return num1 * num2
 }
 function divide(num1,num2){
-    return num1 / num2
+    return num2 / num1
 }
 function percent(num1,num2){
     return (num2 / 100) * num1
@@ -114,7 +137,7 @@ function operate() {
       case '%':
         num2 = percent(num1, num2)
         break
-      case '÷':
+      case '/':
         num2 = num2.toString();
         if (num1 == 0) {
           num2 = "Dont divide by 0..."

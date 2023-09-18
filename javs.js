@@ -70,6 +70,15 @@ function handleOperator(text){
   num1 = '';
 }
 
+//Equals bttn
+function calculate(){
+  if(num1 != '' && num2 != ''){
+    operate();
+  }
+}
+equalsBttn.addEventListener('click', calculate);
+
+
 // Ind. calculating func
 function add(num1,num2){
     return num1 + num2
@@ -115,7 +124,12 @@ function operate() {
         break
     }
     num2 = roundNum(num2)
-    prevDisplay.textContent = "";
-    currentDisplay.textContent = num2;
+    upperDisplay.textContent = "";
+    lowerDisplay.textContent = num2;
     num1 = '';
+  }
+
+  //Rounding num 
+  function roundNum(num){
+    return Math.round(num * 1000000) / 1000000;
   }

@@ -17,26 +17,58 @@ const equalsBttn = document.querySelector('#equals');
 let num1 = '';
 let num2 = '';
 let operator = '';
-//Display
+
+//Lower display
 numberBttn.forEach((btn)=>{
   btn.addEventListener('click', (e)=>{
     checkNum(e.target.textContent);
   })
 })
-
-//Checking input number length
+//Checking input number length & updating lower display
 function checkNum(number){
-  console.log('checkNum', num1, operator, num2, '-->',number);
+  // console.log('checkNum', num1, operator, num2, '-->',number);
   if (num1.length <= 21){
     num1 += number;
     lowerDisplay.textContent = num1;
   }
-  //checking if = 
+  //checking if operator is = to clear
   if (operator === '='){
     num2 = '';
   }
 }
 
+//Updating #'s of  lower into uppper display when 
+// operator bttn is clicked
+operatorBttn.forEach((btn)=>{
+  btn.addEventListener('click', (e)=>{
+    checkOperator(e.target.textContent);
+  })
+})
+function checkOperator(op){
+  if (num1 == '' && num2 == ''){
+    num1 = '0';
+  } 
+  else if (operator == '' && num2 !== ''){
+    num2 = ''
+  }  
+  else if (num2 === "") {
+    num2 = num1;
+    handleOperator(op);
+  } else if (num1 === "") {
+    handleOperator(op);
+  } else {
+    operate();
+    operator = op;
+    lowerDisplay.textContent = " ";
+    upperDisplay.textContent = num2 + " " + operator;
+  }
+}
+function handleOperator(text){
+  operator = text;
+  upperDisplay.textContent = num2 + ' ' + operator;
+  lowerDisplay.textContent = '';
+  num1 = '';
+}
 
 // Ind. calculating func
 function add(num1,num2){

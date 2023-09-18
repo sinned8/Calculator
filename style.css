@@ -14,10 +14,15 @@
     display: flex;
     margin-bottom: auto;
     margin-top: 10px;
+    flex-direction: row;
+    
 }
 .bttnContainer{
     width: 290px;
     height: 250px;
     display: grid;
     grid-template-columns: repeat(4,1fr);
+}
+.digitsLower{
+margin-top: 80px;
 }

@@ -26,3 +26,13 @@
 .digitsLower{
 margin-top: 80px;
 }
+body{
+    background-color: slategray;
+    
+}
+.pageContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

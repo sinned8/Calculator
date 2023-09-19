@@ -1,4 +1,4 @@
-//Dennis Dust -- Calculator 
+//Dennis Dust -- Pocket-Calculator 
 
 // Declaring buttons/ display
 const upperDisplay = document.querySelector('.digitsUpper');
@@ -31,7 +31,7 @@ function checkNum(number){
   }
   //checking if operator is = to clear
   if (operator === '='){
-    num2 = '';
+    num2 = ' 2323';
   }
 }
 
@@ -72,8 +72,8 @@ function handleOperator(text){
 //Equals bttn
 function calculate(){
   if(num1 != '' && num2 != ''){
+    operator = '=';
     operate();
-    operator = '='
   }
 }
 equalsBttn.addEventListener('click', calculate);

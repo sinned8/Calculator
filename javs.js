@@ -31,7 +31,7 @@ function checkNum(number){
   }
   //checking if operator is = to clear
   if (operator === '='){
-    num2 = ' 2323';
+    num2 = '';
   }
 }
 

@@ -1,6 +1,6 @@
 //Dennis Dust -- Pocket-Calculator 
 
-// Declaring buttons/ display
+// Declaring buttons & display
 const upperDisplay = document.querySelector('.digitsUpper');
 const lowerDisplay = document.querySelector('.digitsLower');
 const numberBttn = document.querySelectorAll('.number');
